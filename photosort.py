@@ -2,7 +2,6 @@ import os
 import shutil
 import exifread
 import datetime
-import time
 
 source = r"E:/Nikon/Unsorted/"
 destination = r"E:/Nikon/Sorted"
@@ -21,5 +20,3 @@ for entry in entries:
             os.makedirs(folder)
         print(folder+entry)
         shutil.move(source+entry, folder+entry)
-        # time.sleep(1)
-        # os.remove(source+entry)
