@@ -25,6 +25,10 @@ Status = [
     [sg.Text(key="STATUS", size=(50, 1), enable_events=True)]
 ]
 
+Progress = [
+    []
+]
+
 layout = [
     [
         sg.Column(source_folder_input)
@@ -39,8 +43,8 @@ layout = [
     ],
     [
 
-        sg.Button("Move" , enable_events=True, key="MOVE"),
-        sg.Button("Copy" , enable_events=True, key="COPY")
+        sg.Button("Move", enable_events=True, key="MOVE", button_color=(sg.YELLOWS[0], sg.BLUES[0])),
+        sg.Button("Copy", enable_events=True, key="COPY", button_color=(sg.YELLOWS[0], sg.BLUES[0]))
     ]
 ]
 
@@ -57,7 +61,7 @@ while True:
             # Get list of files in folder
             file_list = os.listdir(source_folder)
             filecount = photosort.image_count(source_folder)
-        except:
+        except Exception:
             file_list = []
             filecount = 0
         window["STATUS"].update(str(filecount) + " photo(s) found.")
@@ -68,11 +72,13 @@ while True:
             window["STATUS"].update("Warning : Source and destination are same!!!")
 
     if event == "MOVE":
+        window["STATUS"].update("Processing....")
         process_type = 'move'
         window["STATUS"].update(str(filecount) + " photo(s) moved.")
 
     if event == "COPY":
+        window["STATUS"].update("Processing....")
         process_type = 'copy'
         print(source_folder+"/", destination_folder, process_type)
-        photosort.sort_photos(source_folder+"/", destination_folder, process_type)
-        window["STATUS"].update(str(filecount) + " photo(s) copied.")
+        sort_count, error_count = photosort.sort_photos(source_folder+"/", destination_folder, process_type)
+        window["STATUS"].update(str(sort_count) + " photo(s) copied. "+str(error_count) + " Error(s) ")
