@@ -6,6 +6,15 @@ Sort Photos to folders based on exif data :
 
 Find the actual date of the photo taken from the exif data and then sort the photos into folders based on year and month of that date.
 
-External Libraries used :
+__External Libraries used :__
 
-ExifRead : https://github.com/ianare/exif-py
+ExifRead : https://pypi.org/project/ExifRead/ \
+PySimpleGUI : https://pypi.org/project/PySimpleGUI/ 
+
+
+
+__ToDo__
+
+Identify Oldest date from tags.\
+Error handling.\
+More options like folder structure formatting.
