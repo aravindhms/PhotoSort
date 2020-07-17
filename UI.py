@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 import os.path
+import photosort
 
 # First the window layout in 2 columns
 
@@ -21,10 +22,8 @@ destination_folder = [
 
 ]
 Status = [
-    [sg.Text(key="STATUS",size=(25, 1), enable_events=True)]
+    [sg.Text(key="STATUS", size=(25, 1), enable_events=True)]
 ]
-
-
 
 layout = [
     [
@@ -53,18 +52,12 @@ while True:
 
     if event == "SOURCE":
         folder = values["SOURCE"]
-        window["STATUS"].update("OK")
+
         try:
             # Get list of files in folder
             file_list = os.listdir(folder)
-        except:
+            filecount = photosort.image_count(folder)
+        except :
             file_list = []
-
-        fnames = [
-            f
-            for f in file_list
-            if os.path.isfile(os.path.join(folder, f))
-            # and f.lower().endswith((".png", ".gif"))
-        ]
-        # window["-FILE LIST-"].update(fnames)
-        print(file_list)
+            filecount = 0
+        window["STATUS"].update(str(filecount) + " photo(s) found.")

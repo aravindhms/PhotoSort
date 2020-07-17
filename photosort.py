@@ -3,11 +3,12 @@ import shutil
 import exifread
 import datetime
 
+source = r"E:/Nikon/Unsorted/"
+destination = r"E:/Nikon/Sorted"
+image_formats = ["JPEG", "JPG", "PNG", "RAW", "NEF"]
 
 
-def sort_photos():
-    source = r"E:/Nikon/Unsorted/"
-    destination = r"E:/Nikon/Sorted"
+def sort_photos(source, destination):
     entries = os.listdir(source)
     for entry in entries:
         if os.path.isfile(source+entry):
@@ -23,4 +24,23 @@ def sort_photos():
                 os.makedirs(folder)
             print(folder+entry)
             shutil.move(source+entry, folder+entry)
-sort_photos()
+
+
+sort_photos(source, destination)
+
+
+def image_count(source_folder):
+    count = 0
+    entries = os.listdir(source_folder)
+    for entry in entries:
+        if entry.endswith(tuple(image_formats)):
+            count = count+1
+    return count
+
+
+def check_exif(source_folder):
+    entries = os.listdir(source_folder)
+    for entry in entries:
+        if entry.endswith(tuple(image_formats)):
+            count = count+1
+    return count
