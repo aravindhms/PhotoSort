@@ -15,7 +15,8 @@ def sort_photos(source_folder, destination_folder,process_type):
             f = open(source_folder + entry, 'rb')
             tags = exifread.process_file(f, details=False)
             f.close()
-            photo_date = tags["Image DateTime"]
+            print(entry)
+            photo_date = tags["EXIF DateTime"]
             year = str(photo_date)[0:4]
             month_int = int(str(photo_date)[5:7])
             month = datetime.date(1900, month_int, 1).strftime('%B')
@@ -28,7 +29,7 @@ def sort_photos(source_folder, destination_folder,process_type):
                 shutil.copy(source_folder + entry, folder + entry)
 
 
-sort_photos(source, destination,process_type)
+# sort_photos(source, destination,process_type)
 
 
 def image_count(source_folder):

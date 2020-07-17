@@ -15,6 +15,5 @@ PySimpleGUI : https://pypi.org/project/PySimpleGUI/
 
 __ToDo__
 
-Identify Oldest date from tags.\
 Error handling.\
 More options like folder structure formatting.
