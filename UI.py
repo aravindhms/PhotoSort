@@ -1,5 +1,5 @@
-import PySimpleGUI as sg
 import os.path
+import PySimpleGUI as sg
 import photosort
 
 # First the window layout in 2 columns
@@ -47,7 +47,7 @@ layout = [
 window = sg.Window("PhotoSort", layout)
 while True:
     event, values = window.read()
-    if event == "Exit" or event == sg.WIN_CLOSED:
+    if event == sg.WIN_CLOSED:
         break
 
     if event == "SOURCE":
@@ -57,7 +57,7 @@ while True:
             # Get list of files in folder
             file_list = os.listdir(folder)
             filecount = photosort.image_count(folder)
-        except :
+        except:
             file_list = []
             filecount = 0
         window["STATUS"].update(str(filecount) + " photo(s) found.")
