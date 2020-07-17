@@ -25,27 +25,22 @@ Status = [
     [sg.Text(key="STATUS", size=(50, 1), enable_events=True)]
 ]
 
-Progress = [
-    []
-]
-
 layout = [
     [
         sg.Column(source_folder_input)
     ],
     [
         sg.Column(destination_folder_input),
-
     ],
     [
         sg.Column(Status),
-
     ],
     [
-
         sg.Button("Move", enable_events=True, key="MOVE", button_color=(sg.YELLOWS[0], sg.BLUES[0])),
         sg.Button("Copy", enable_events=True, key="COPY", button_color=(sg.YELLOWS[0], sg.BLUES[0]))
-    ]
+    ],
+    [sg.ProgressBar(1000, orientation='h', size=(20, 20), key='progressbar')]
+
 ]
 
 window = sg.Window("PhotoSort", layout)

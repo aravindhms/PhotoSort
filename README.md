@@ -6,14 +6,17 @@ Sort Photos to folders based on exif data :
 
 Find the actual capture date of the photo from the exif data and then sort the photos into folders based on year and month of that date.
 
-GUI Screenshot:\
-![Screenshot](Screenshot.png)
+GUI Screenshot:
 
-Before:\
-![Screenshot](before.png)
+![Screenshot](Screenshots/Screenshot.png)
 
-After:\
-![Screenshot](after.png)
+Before:
+
+![Screenshot](Screenshots/before.png)
+
+After:
+
+![Screenshot](Screenshots/after.png)
 
 __External Libraries used :__
 
