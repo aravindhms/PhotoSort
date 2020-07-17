@@ -4,7 +4,7 @@ import photosort
 
 # First the window layout in 2 columns
 
-source_folder = [
+source_folder_input = [
     [
         sg.Text("Source Folder"),
         sg.In(size=(25, 1), enable_events=True, key="SOURCE"),
@@ -13,7 +13,7 @@ source_folder = [
 
 ]
 
-destination_folder = [
+destination_folder_input = [
     [
         sg.Text("Destination Folder"),
         sg.In(size=(25, 1), enable_events=True, key="DESTINATION"),
@@ -22,15 +22,15 @@ destination_folder = [
 
 ]
 Status = [
-    [sg.Text(key="STATUS", size=(25, 1), enable_events=True)]
+    [sg.Text(key="STATUS", size=(50, 1), enable_events=True)]
 ]
 
 layout = [
     [
-        sg.Column(source_folder)
+        sg.Column(source_folder_input)
     ],
     [
-        sg.Column(destination_folder),
+        sg.Column(destination_folder_input),
 
     ],
     [
@@ -39,8 +39,8 @@ layout = [
     ],
     [
 
-        sg.Button("Move"),
-        sg.Button("Copy")
+        sg.Button("Move" , enable_events=True, key="MOVE"),
+        sg.Button("Copy" , enable_events=True, key="COPY")
     ]
 ]
 
@@ -51,13 +51,28 @@ while True:
         break
 
     if event == "SOURCE":
-        folder = values["SOURCE"]
+        source_folder = values["SOURCE"]
 
         try:
             # Get list of files in folder
-            file_list = os.listdir(folder)
-            filecount = photosort.image_count(folder)
+            file_list = os.listdir(source_folder)
+            filecount = photosort.image_count(source_folder)
         except:
             file_list = []
             filecount = 0
         window["STATUS"].update(str(filecount) + " photo(s) found.")
+
+    if event == "DESTINATION":
+        destination_folder = values["DESTINATION"]
+        if source_folder == destination_folder:
+            window["STATUS"].update("Warning : Source and destination are same!!!")
+
+    if event == "MOVE":
+        process_type = 'move'
+        window["STATUS"].update(str(filecount) + " photo(s) moved.")
+
+    if event == "COPY":
+        process_type = 'copy'
+        print(source_folder+"/", destination_folder, process_type)
+        photosort.sort_photos(source_folder+"/", destination_folder, process_type)
+        window["STATUS"].update(str(filecount) + " photo(s) copied.")
