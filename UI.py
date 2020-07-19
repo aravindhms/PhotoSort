@@ -69,7 +69,8 @@ while True:
     if event == "MOVE":
         window["STATUS"].update("Processing....")
         process_type = 'move'
-        window["STATUS"].update(str(filecount) + " photo(s) moved.")
+        sort_count, error_count = photosort.sort_photos(source_folder+"/", destination_folder, process_type)
+        window["STATUS"].update(str(sort_count) + " photo(s) moved. "+str(error_count) + " Error(s) ")
 
     if event == "COPY":
         window["STATUS"].update("Processing....")
