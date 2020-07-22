@@ -28,4 +28,4 @@ PySimpleGUI : <https://pypi.org/project/PySimpleGUI/>
 ToDo:
 
 Error handling.\
-More options like folder structure formatting.
+Folder structure options.
