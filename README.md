@@ -20,12 +20,12 @@ After:
 
 ![Screenshot](Screenshots/after.png)
 
-_External Libraries used :_
+External Libraries used:
 
 ExifRead : <https://pypi.org/project/ExifRead/> \
 PySimpleGUI : <https://pypi.org/project/PySimpleGUI/> 
 
-_ToDo_
+ToDo:
 
 Error handling.\
 More options like folder structure formatting.

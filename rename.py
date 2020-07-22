@@ -15,7 +15,3 @@ for entry in entries:
         photo_time = str(tags["EXIF DateTimeDigitized"])[11:20]
         photo_date_orig = tags["EXIF DateTimeDigitized"]
         print("2018:07:01 "+photo_time)
-
-
-
-
