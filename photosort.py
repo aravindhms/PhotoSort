@@ -36,7 +36,6 @@ def sort_photos(source_folder, destination_folder, process_type):
             except Exception as e:
                 print(entry, e)
                 error_count = error_count+1
-                pass
     return process_count, error_count
 
 
