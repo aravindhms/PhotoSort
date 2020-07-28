@@ -6,7 +6,7 @@ Sort Photos to folders based on exif data :
 
 Find the actual capture date of the photo from the exif data and then sort the photos into folders based on year and month of that date.
 
-Download : <https://bit.ly/332qmcH>
+Download : <https://github.com/aravindhms/PhotoSort/releases/download/beta/Photosort_beta.exe>
 
 GUI Screenshot:
 
