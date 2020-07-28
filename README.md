@@ -12,13 +12,9 @@ GUI Screenshot:
 
 ![Screenshot](Screenshots/Screenshot.png)
 
-Before:
+![Screenshot](Screenshots/Output.jpg)
 
-![Screenshot](Screenshots/before.png)
 
-After:
-
-![Screenshot](Screenshots/after.png)
 
 External Libraries used:
 
