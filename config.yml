@@ -1,5 +1,0 @@
-- name: Checkmarx Scan
-  uses: checkmarx-ts/checkmarx-github-action@v1.0.3
-- name: Python quality and format checker
-  uses: konstruktoid/action-pylint@v0.0.5
-
