@@ -14,8 +14,6 @@ GUI Screenshot:
 
 ![Screenshot](Screenshots/Output.jpg)
 
-
-
 External Libraries used:
 
 ExifRead : <https://pypi.org/project/ExifRead/> \
