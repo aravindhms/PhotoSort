@@ -9,7 +9,7 @@ ctk.set_default_color_theme("blue")  # Themes: "blue", "green", "dark-blue"
 class PhotoSorterApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("PhotoSort Organizer")
+        self.title("Photo Sort")
         self.geometry("740x380")
         self.resizable(False, False)
 
