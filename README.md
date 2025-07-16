@@ -1,25 +1,96 @@
-# PhotoSort
+# 📸 PhotoSort
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8e11b3f0d8164348a37838c549102181)](https://app.codacy.com/manual/aravindhms/PhotoSort?utm_source=github.com&utm_medium=referral&utm_content=aravindhms/PhotoSort&utm_campaign=Badge_Grade_Dashboard)
+**PhotoSort** is a simple Python tool to organize your photos based on their EXIF metadata.  
+It can automatically sort images into folders like `Year/Month` or `Year/Month/Day` using a friendly **GUI** or **command-line interface (CLI)**.
 
-Sort Photos to folders based on exif data :
+---
 
-Find the actual capture date of the photo from the exif data and then sort the photos into folders based on year and month of that date.
+## ✨ Features
 
-Download : <https://github.com/aravindhms/PhotoSort/releases/download/pre-release/Photosort.exe>
+- ✅ Sort by photo capture date (EXIF)  
+- ✅ Choose between `copy` or `move`  
+- ✅ Organize into `Year/Month` or `Year/Month/Day` folders  
+- ✅ Simple GUI with folder picker  
+- ✅ Optional CLI for automation  
+- ✅ Supports JPEG, JPG, PNG, RAW, NEF, CR2 formats  
 
-GUI Screenshot:
+---
+
+## 🖼️ Screenshots
+
+**Before Sorting** | **After Sorting**  
+:--:|:--:  
+![Before](Screenshots/before.png) | ![After](Screenshots/after.png)
+
+**GUI:**
 
 ![Screenshot](Screenshots/Screenshot.png)
 
-![Screenshot](Screenshots/Output.jpg)
+---
 
-External Libraries used:
+## 🚀 Installation
 
-ExifRead : <https://pypi.org/project/ExifRead/> \
-PySimpleGUI : <https://pypi.org/project/PySimpleGUI/> 
+1. Clone or download this repo:
 
-ToDo:
+    `git clone https://github.com/your-username/PhotoSort.git`  
+    `cd PhotoSort`
 
-Error handling.\
-Folder structure options. --DONE
+2. Install dependencies:
+
+    `pip install -r requirements.txt`
+
+---
+
+## 🖥️ Usage
+
+### 📌 Option 1: Graphical Interface (GUI)
+
+Run the app using:
+
+    python UI.py
+
+- Browse for source and destination folders  
+- Select folder structure and process type  
+- Click "Start Sorting"
+
+---
+
+### 📌 Option 2: Command-Line Interface (CLI)
+
+Run with:
+
+    python main.py -s <source_path> -d <destination_path> -t <copy|move> -f <YM|YMD>
+
+**Examples:**
+
+    python main.py -s "E:/Camera/Unsorted" -d "E:/Camera/Sorted" -t copy -f YMD
+
+---
+
+
+## 📁 Folder Structure
+
+    PhotoSort/
+    ├── Screenshots/
+    │   ├── before.png
+    │   ├── after.png
+    │   └── Screenshot.png
+    ├── photosort.py          # Core logic (refactored)
+    ├── UI.py                 # GUI (PySimpleGUI)
+    ├── main.py               # CLI entry point
+    ├── requirements.txt      # Dependencies
+    ├── README.md             # This file
+    └── tests/
+        └── test_sorter.py    # Optional tests
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+---
+
+## 📄 License
+
+MIT License
