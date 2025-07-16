@@ -45,7 +45,7 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 ### 📌 Option 1: Windows Executable (EXE)
 
-Download the latest exe from releases
+Download the latest exe from [releases](https://github.com/aravindhms/PhotoSort/releases)
 
 ### 📌 Option 2: Graphical Interface (GUI)
 
