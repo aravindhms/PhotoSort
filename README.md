@@ -75,13 +75,12 @@ Run with:
     │   ├── before.png
     │   ├── after.png
     │   └── Screenshot.png
-    ├── photosort.py          # Core logic (refactored)
-    ├── UI.py                 # GUI (PySimpleGUI)
+    ├── photosort.py          # Core logic 
+    ├── UI.py                 # GUI 
     ├── main.py               # CLI entry point
     ├── requirements.txt      # Dependencies
     ├── README.md             # This file
-    └── tests/
-        └── test_sorter.py    # Optional tests
+
 
 ---
 
