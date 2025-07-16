@@ -43,7 +43,11 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 ## 🖥️ Usage
 
-### 📌 Option 1: Graphical Interface (GUI)
+### 📌 Option 1: Windows Executable (EXE)
+
+Download the latest exe from releases
+
+### 📌 Option 2: Graphical Interface (GUI)
 
 Run the app using:
 
@@ -55,7 +59,7 @@ Run the app using:
 
 ---
 
-### 📌 Option 2: Command-Line Interface (CLI)
+### 📌 Option 3: Command-Line Interface (CLI)
 
 Run with:
 
