@@ -32,7 +32,7 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 1. Clone or download this repo:
 
-    `git clone https://github.com/your-username/PhotoSort.git`  
+    `git clone https://github.com/aravindhms/PhotoSort.git`  
     `cd PhotoSort`
 
 2. Install dependencies:
