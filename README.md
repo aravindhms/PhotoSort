@@ -1,7 +1,7 @@
 # 📸 PhotoSort
 
 **PhotoSort** is a simple Python tool to organize your photos based on their EXIF metadata.  
-It can automatically sort images into folders like `Year/Month` or `Year/Month/Day` using a friendly **GUI** or **command-line interface (CLI)**.
+It can automatically sort images into folders like `Year/Month` or `Year/Month/Day` using a command-line interface (CLI).
 
 ---
 
@@ -10,21 +10,12 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 - ✅ Sort by photo capture date (EXIF)  
 - ✅ Choose between `copy` or `move`  
 - ✅ Organize into `Year/Month` or `Year/Month/Day` folders  
-- ✅ Simple GUI with folder picker  
 - ✅ Optional CLI for automation  
-- ✅ Supports JPEG, JPG, PNG, RAW, NEF, CR2 formats  
+- ✅ Supports JPEG, JPG, PNG, NEF, CR2, RAW formats
 
 ---
 
-## 🖼️ Screenshots
-
-**Before Sorting** | **After Sorting**  
-:--:|:--:  
-![Before](Screenshots/before.png) | ![After](Screenshots/after.png)
-
-**GUI:**
-
-![Screenshot](Screenshots/Screenshot.png)
+> Note: The GUI (UI.py) and screenshot assets referenced in earlier versions are not present in this repository. This README reflects the current CLI-only implementation.
 
 ---
 
@@ -32,7 +23,7 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 1. Clone or download this repo:
 
-    `git clone https://github.com/your-username/PhotoSort.git`  
+    `git clone https://github.com/aravindhms/PhotoSort.git`  
     `cd PhotoSort`
 
 2. Install dependencies:
@@ -43,48 +34,27 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 ## 🖥️ Usage
 
-### 📌 Option 1: Windows Executable (EXE)
-
-Download the latest exe from [releases](https://github.com/aravindhms/PhotoSort/releases)
-
-### 📌 Option 2: Graphical Interface (GUI)
-
-Run the app using:
-
-    python UI.py
-
-- Browse for source and destination folders  
-- Select folder structure and process type  
-- Click "Start Sorting"
-
----
-
-### 📌 Option 3: Command-Line Interface (CLI)
-
-Run with:
+Run the command-line tool:
 
     python main.py -s <source_path> -d <destination_path> -t <copy|move> -f <YM|YMD>
 
-**Examples:**
+**Example:**
 
     python main.py -s "E:/Camera/Unsorted" -d "E:/Camera/Sorted" -t copy -f YMD
 
----
+This will scan the source folder for supported image files, determine the capture date (EXIF) or fallback to file modification time, and copy or move files into `Year/Month` (YM) or `Year/Month/Day` (YMD) folders under the destination.
 
+---
 
 ## 📁 Folder Structure
 
     PhotoSort/
-    ├── Screenshots/
-    │   ├── before.png
-    │   ├── after.png
-    │   └── Screenshot.png
-    ├── photosort.py          # Core logic 
-    ├── UI.py                 # GUI 
+    ├── photosort.py          # Core logic
     ├── main.py               # CLI entry point
     ├── requirements.txt      # Dependencies
     ├── README.md             # This file
 
+(Older references to `UI.py` and `Screenshots/` have been removed from this repository.)
 
 ---
 
