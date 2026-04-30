@@ -1,7 +1,7 @@
 # 📸 PhotoSort
 
 **PhotoSort** is a simple Python tool to organize your photos based on their EXIF metadata.  
-It can automatically sort images into folders like `Year/Month` or `Year/Month/Day` using a friendly **GUI** or **command-line interface (CLI)**.
+It can automatically sort images into folders like `Year/Month` or `Year/Month/Day` using a command-line interface (CLI).
 
 ---
 
@@ -10,21 +10,8 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 - ✅ Sort by photo capture date (EXIF)  
 - ✅ Choose between `copy` or `move`  
 - ✅ Organize into `Year/Month` or `Year/Month/Day` folders  
-- ✅ Simple GUI with folder picker  
-- ✅ Optional CLI for automation  
-- ✅ Supports JPEG, JPG, PNG, RAW, NEF, CR2 formats  
-
----
-
-## 🖼️ Screenshots
-
-**Before Sorting** | **After Sorting**  
-:--:|:--:  
-![Before](Screenshots/before.png) | ![After](Screenshots/after.png)
-
-**GUI:**
-
-![Screenshot](Screenshots/Screenshot.png)
+- ✅ Command-line interface (CLI) for automation  
+- ✅ Supports JPEG, JPG, PNG, RAW, NEF, CR2 formats
 
 ---
 
@@ -47,19 +34,7 @@ It can automatically sort images into folders like `Year/Month` or `Year/Month/D
 
 Download the latest exe from [releases](https://github.com/aravindhms/PhotoSort/releases)
 
-### 📌 Option 2: Graphical Interface (GUI)
-
-Run the app using:
-
-    python UI.py
-
-- Browse for source and destination folders  
-- Select folder structure and process type  
-- Click "Start Sorting"
-
----
-
-### 📌 Option 3: Command-Line Interface (CLI)
+### 📌 Option 2: Command-Line Interface (CLI)
 
 Run with:
 
@@ -71,20 +46,30 @@ Run with:
 
 ---
 
+## 📌 Programmatic API
+
+If you prefer to use the core logic directly from Python, call the helper in `photosort.py`:
+
+    from photosort import sort_photos
+
+    total, success, errors = sort_photos(
+        source_dir="/path/to/source",
+        destination_dir="/path/to/destination",
+        process_type="copy",       # or "move"
+        folder_struct="YM"         # or "YMD"
+    )
+
+This returns a tuple: `(total_files_scanned, successfully_sorted, errors)`.
+
+---
 
 ## 📁 Folder Structure
 
     PhotoSort/
-    ├── Screenshots/
-    │   ├── before.png
-    │   ├── after.png
-    │   └── Screenshot.png
-    ├── photosort.py          # Core logic 
-    ├── UI.py                 # GUI 
+    ├── photosort.py          # Core logic
     ├── main.py               # CLI entry point
     ├── requirements.txt      # Dependencies
     ├── README.md             # This file
-
 
 ---
 
